@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 17:04:09 by eassouli          #+#    #+#              #
-#    Updated: 2021/01/19 18:11:00 by eassouli         ###   ########.fr        #
+#    Updated: 2021/01/19 19:09:46 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ NASM	=	/usr/bin/nasm
 
 FLAGS	=	-felf64
 
-SRCS	=	ft_strlen.s
+SRCS	=	ft_strlen.s\
+	ft_strcpy.s\
+	ft_strcmp.s
 
 PATH_S	=	srcs/
 
