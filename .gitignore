@@ -1,3 +1,4 @@
 build/
 libasm.a
 a.out
+libasm_test

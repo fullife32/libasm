@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 17:04:09 by eassouli          #+#    #+#              #
-#    Updated: 2021/01/19 19:09:46 by eassouli         ###   ########.fr        #
+#    Updated: 2021/01/30 18:19:26 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,10 @@ FLAGS	=	-felf64
 
 SRCS	=	ft_strlen.s\
 	ft_strcpy.s\
-	ft_strcmp.s
+	ft_strcmp.s\
+	ft_write.s\
+	ft_read.s\
+	ft_strdup.s
 
 PATH_S	=	srcs/
 
