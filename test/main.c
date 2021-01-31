@@ -2,17 +2,10 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
+#include "libasm.h"
 
-# define BUFFER_SIZE 8
-
-size_t	ft_strlen(const char *s);
-char	*ft_strcpy(char *dst, const char *src);
-int	ft_strcmp(const char *s1, const char *s2);
-ssize_t	ft_write(int fd, const void *buf, size_t count);
-ssize_t	ft_read(int fd, void *buf, size_t count);
-char	*ft_strdup(const char *s);
+#define BUFFER_SIZE 8
 
 int	main(void)
 {
@@ -24,6 +17,8 @@ int	main(void)
 	int		fd;
 	char	ft_buff[BUFFER_SIZE + 1];
 	char	buff[BUFFER_SIZE + 1];
+	char	*ft_dup;
+	char	*dup;
 
 	printf("-------- FT_STRLEN --------\n");
 	printf("ft_strlen : %zu\n", ft_strlen(s1));
@@ -53,5 +48,15 @@ int	main(void)
 	printf("ft_read KO : %zd\n", ft_read(ft_fd, NULL, BUFFER_SIZE));
 	printf("read    KO : %zd\n\n", read(fd, NULL, BUFFER_SIZE));
 	printf("-------- FT_STRDUP --------\n");
+	ft_dup = ft_strdup("Lorem ipsum dolor sit amet, consectetur adipiscingelit. Sed in malesuada purus. Etiam a scelerisque massa. Ut non euismod elit. Aliquambibendum dolor mi, id fringilla tellus pulvinar eu. Fusce vel fermentum sem. Crasvolutpat, eros eget rhoncus rhoncus, diam augue egestas dolor, vitae rutrum nisifelis sed purus. Mauris magna ex, mollis non suscipit eu, lacinia ac turpis. Phasellusac tortor et lectus fermentum lobortis eu at mauris. Vestibulum sit amet posueretortor, sit amet consequat amet.");
+	dup = strdup("Lorem ipsum dolor sit amet, consectetur adipiscingelit. Sed in malesuada purus. Etiam a scelerisque massa. Ut non euismod elit. Aliquambibendum dolor mi, id fringilla tellus pulvinar eu. Fusce vel fermentum sem. Crasvolutpat, eros eget rhoncus rhoncus, diam augue egestas dolor, vitae rutrum nisifelis sed purus. Mauris magna ex, mollis non suscipit eu, lacinia ac turpis. Phasellusac tortor et lectus fermentum lobortis eu at mauris. Vestibulum sit amet posueretortor, sit amet consequat amet.");
+	printf("ft_strdup : %s\n", ft_dup);
+	printf("strdup    : %s\n", dup);
+	free(ft_dup);
+	free(dup);
+	free(ft_dst);
+	free(dst);
+	close(ft_fd);
+	close(fd);
 	return (0);
 }

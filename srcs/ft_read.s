@@ -17,7 +17,7 @@ read_call:
 error:
 			neg		rax								; 
 			mov		r8, rax							; 
-			call	__errno_location wrt ..plt		; 
+			call	__errno_location wrt ..plt		; dependancies
 			mov		[rax], r8						; memory
 			pop		r8								; 
 			mov		rax, -1							; 

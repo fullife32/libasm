@@ -17,7 +17,7 @@ write_call:
 error:
 			neg		rax								; 
 			mov		r8, rax							; 
-			call	__errno_location wrt ..plt		; 
+			call	__errno_location wrt ..plt		; dependancies
 			mov		[rax], r8						; memory
 			mov		rax, -1							; 
 			pop		r8								; 

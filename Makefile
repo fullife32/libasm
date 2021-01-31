@@ -6,11 +6,13 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 17:04:09 by eassouli          #+#    #+#              #
-#    Updated: 2021/01/30 18:19:26 by eassouli         ###   ########.fr        #
+#    Updated: 2021/01/31 23:52:26 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libasm.a
+
+INCLUDE	=	includes/.
 
 MKDIR	=	/bin/mkdir -p
 
@@ -18,7 +20,7 @@ PATH_B	=	build/
 
 NASM	=	/usr/bin/nasm
 
-FLAGS	=	-felf64
+FLAGS	=	-felf64 -I $(INCLUDE)
 
 SRCS	=	ft_strlen.s\
 	ft_strcpy.s\
@@ -31,7 +33,7 @@ PATH_S	=	srcs/
 
 OBJS_B	=	$(addprefix $(PATH_B), $(SRCS:.s=.o))
 
-AR	=	/usr/bin/ar rc
+AR	=	/usr/bin/ar rcs
 
 RM	=	/bin/rm -rf
 
