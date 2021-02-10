@@ -3,22 +3,21 @@
 
 			section	.text
 ft_write:
-			xor		r8, r8							; 
-			push	r8								; 
+			push	r8								; Push register 8 to keep the original value unchanged
 
 write_call:
-			mov		rax, 1							; write register
-			syscall									; 
-			cmp		rax, 0							; 
-			jl		error							; 
-			pop		r8								; 
-			ret										; 
+			mov		rax, 1							; Write register, the string to write is already set at rdi
+			syscall									; Call system to execute the write function
+			cmp		rax, 0							; Check if the write function performed correctly
+			jl		error							; If not, jump to the error label
+			pop		r8								; Set r8 to its original value
+			ret										; Return value
 
 error:
-			neg		rax								; 
-			mov		r8, rax							; 
-			call	__errno_location wrt ..plt		; dependancies
-			mov		[rax], r8						; memory
-			mov		rax, -1							; 
-			pop		r8								; 
-			ret										; 
+			neg		rax								; Set the return of the write function to its absolute value
+			mov		r8, rax							; Keep the value of rax in a temporary variable
+			call	__errno_location wrt ..plt		; Call errno to set the error
+			mov		[rax], r8						; Move back the value of rax in 1 byte
+			mov		rax, -1							; Set the return value to -1 to indicate an error
+			pop		r8								; Set r8 to its original value
+			ret										; Return value

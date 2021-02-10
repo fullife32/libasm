@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "libasm.h"
+#include "../includes/libasm.h"
 
 #define BUFFER_SIZE 8
 

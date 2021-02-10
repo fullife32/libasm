@@ -3,8 +3,8 @@
 			section	.text
 ft_strcmp:
 			xor		rcx, rcx					; Set the counter value to zero
-			xor		rax, rax					; 
-			xor		rbx, rbx					; 
+			xor		rax, rax					; Set the return value to zero
+			xor		rbx, rbx					; Set the temporary variable to zero
 
 cmp:
 			mov		al, byte [rdi + rcx]		; Assign second string actual char to a temporary variable

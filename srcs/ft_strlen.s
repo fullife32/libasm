@@ -2,7 +2,7 @@
 
 			section	.text
 ft_strlen:
-			xor		rcx, rcx				; Set the counter to zero
+			xor		rcx, rcx				; Set the counter value to zero
 
 count:
 			cmp		byte [rdi + rcx], 0		; Check if the string ends
