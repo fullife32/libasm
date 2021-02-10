@@ -41,8 +41,8 @@ int	main(void)
 	printf("ft_write   KO : %zd\n", ft_write(1, NULL, ft_strlen(ft_dst)));
 	printf("write      KO : %zd\n\n", write(1, NULL, strlen(dst)));
 	printf("-------- FT_READ --------\n");
-	ft_fd = open("test.txt", O_RDONLY);
-	fd = open("test.txt", O_RDONLY);
+	fd = open("test/test.txt", O_RDONLY);
+	ft_fd = open("test/test.txt", O_RDONLY);
 	printf("ft_read OK : %zd : %s\n", ft_read(ft_fd, ft_buff, BUFFER_SIZE), ft_buff);
 	printf("read    OK : %zd : %s\n", read(fd, buff, BUFFER_SIZE), buff);
 	printf("ft_read KO : %zd\n", ft_read(ft_fd, NULL, BUFFER_SIZE));
